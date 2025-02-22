@@ -7,7 +7,7 @@
 			</h2>
 			<p class="text-center text-lg text-gray-600 mt-4">
 				Don't have an account?
-				<nuxt-link to="/register" class="text-blue-500 hover:underline"
+				<nuxt-link to="/registration" class="text-blue-500 hover:underline"
 					>Register here</nuxt-link
 				>
 			</p>
