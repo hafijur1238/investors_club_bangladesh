@@ -38,10 +38,9 @@
 			</p>
 		</div>
 
-		<!-- Form -->
 		<form
 			@submit.prevent="handleSubmit"
-			class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6"
+			class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6"
 		>
 			<!-- Full Name & Email -->
 			<div>
@@ -49,7 +48,7 @@
 				<input
 					v-model="form.fullName"
 					type="text"
-					class="input-field"
+					class="input-field w-full"
 					placeholder="Enter full name"
 				/>
 			</div>
@@ -58,7 +57,7 @@
 				<input
 					v-model="form.email"
 					type="email"
-					class="input-field"
+					class="input-field w-full"
 					placeholder="Enter email"
 				/>
 			</div>
@@ -69,7 +68,7 @@
 				<input
 					v-model="form.nidNumber"
 					type="text"
-					class="input-field"
+					class="input-field w-full"
 					placeholder="Enter NID number"
 				/>
 			</div>
@@ -78,7 +77,7 @@
 				<input
 					@change="handleFileUpload($event, 'nidImage')"
 					type="file"
-					class="file-input"
+					class="file-input w-full"
 				/>
 			</div>
 
@@ -88,7 +87,7 @@
 				<input
 					v-model="form.phoneNumber"
 					type="text"
-					class="input-field"
+					class="input-field w-full"
 					placeholder="Enter phone number"
 				/>
 			</div>
@@ -97,7 +96,7 @@
 				<input
 					v-model="form.passportNumber"
 					type="text"
-					class="input-field"
+					class="input-field w-full"
 					placeholder="Enter passport number"
 				/>
 			</div>
@@ -108,7 +107,7 @@
 				<input
 					@change="handleFileUpload($event, 'passportPhoto')"
 					type="file"
-					class="file-input"
+					class="file-input w-full"
 				/>
 			</div>
 			<div>
@@ -116,14 +115,14 @@
 				<input
 					@change="handleFileUpload($event, 'passportImage')"
 					type="file"
-					class="file-input"
+					class="file-input w-full"
 				/>
 			</div>
 
 			<!-- Payment Method & Transaction ID -->
 			<div>
 				<label class="block text-gray-700">Select payment method</label>
-				<select v-model="form.paymentMethod" class="input-field">
+				<select v-model="form.paymentMethod" class="input-field w-full">
 					<option value="" disabled selected>Select Payment Method</option>
 					<option>Mobile Wallet</option>
 					<option>Bank Transfer</option>
@@ -135,19 +134,21 @@
 				<input
 					v-model="form.transactionId"
 					type="text"
-					class="input-field"
+					class="input-field w-full"
 					placeholder="Enter transaction ID"
 				/>
 			</div>
 
 			<!-- Division, District, Thana -->
-			<div class="col-span-2 grid grid-cols-3 gap-4">
+			<div
+				class="col-span-1 sm:col-span-2 grid grid-cols-1 sm:grid-cols-3 gap-4"
+			>
 				<div>
 					<label class="block text-gray-700">Division</label>
 					<select
 						v-model="form.division"
 						@change="updateDistricts"
-						class="input-field"
+						class="input-field w-full"
 					>
 						<option value="" disabled selected>Select Division</option>
 						<option
@@ -164,7 +165,7 @@
 					<select
 						v-model="form.district"
 						@change="updateThanas"
-						class="input-field"
+						class="input-field w-full"
 					>
 						<option value="" disabled selected>Select District</option>
 						<option
@@ -178,7 +179,7 @@
 				</div>
 				<div>
 					<label class="block text-gray-700">Thana</label>
-					<select v-model="form.thana" class="input-field">
+					<select v-model="form.thana" class="input-field w-full">
 						<option value="" disabled selected>Select Thana</option>
 						<option v-for="thana in thanas" :key="thana" :value="thana">
 							{{ thana }}
@@ -188,30 +189,30 @@
 			</div>
 
 			<!-- Full Address & Investment Amount -->
-			<div class="col-span-2">
+			<div class="col-span-1 sm:col-span-2">
 				<label class="block text-gray-700">Full Address</label>
 				<textarea
 					v-model="form.fullAddress"
-					class="input-field"
+					class="input-field w-full"
 					placeholder="Enter full address"
 				></textarea>
 			</div>
 
-			<div class="col-span-2">
+			<div class="col-span-1 sm:col-span-2">
 				<label class="block text-gray-700">Investment amount</label>
 				<input
 					v-model="form.investmentAmount"
 					type="text"
-					class="input-field"
+					class="input-field w-full"
 					placeholder="Enter investment amount"
 				/>
 			</div>
 
 			<!-- Submit Button -->
-			<div class="col-span-2 text-center mt-6">
+			<div class="col-span-1 sm:col-span-2 text-center mt-6">
 				<button
 					type="submit"
-					class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700"
+					class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 w-full sm:w-auto"
 				>
 					Submit
 				</button>
