@@ -36,8 +36,10 @@
 						class="mt-2 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-lg"
 					/>
 				</div>
+				<div v-if="errorMessage" class="text-red-500 text-lg text-center mb-4">
+					{{ errorMessage }}
+				</div>
 				<div class="flex justify-end">
-					<!-- Forgot Password link navigates to another page -->
 					<nuxt-link
 						to="/forgot-password"
 						class="text-lg text-blue-500 hover:underline"
@@ -56,27 +58,37 @@
 	</div>
 </template>
 
-<script>
-export default {
-	data() {
-		return {
-			userId: "",
-			password: "",
-		};
-	},
-	methods: {
-		handleSubmit() {
-			// Perform login logic here
-			if (this.userId && this.password) {
-				console.log("Logging in with:", this.userId, this.password);
-			} else {
-				alert("Please fill in both fields.");
-			}
-		},
-	},
+<script setup>
+import { ref } from "vue";
+import { useRouter } from "vue-router";
+
+const router = useRouter();
+
+// Example User Data
+const validUser = {
+	userId: "user123",
+	password: "password123",
+};
+
+// Form Fields
+const userId = ref("");
+const password = ref("");
+const errorMessage = ref("");
+
+// Handle Login
+const handleSubmit = () => {
+	if (
+		userId.value === validUser.userId &&
+		password.value === validUser.password
+	) {
+		// Redirect to dashboard
+		router.push("/set-new-password");
+	} else {
+		errorMessage.value = "Invalid user ID or password. Please try again.";
+	}
 };
 </script>
 
 <style>
-/* Optional custom styles can go here */
+/* Optional custom styles */
 </style>

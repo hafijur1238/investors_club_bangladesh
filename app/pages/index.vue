@@ -135,7 +135,7 @@ const articles = [
 						ICB provides investors and innovators with the tools to grow.
 					</p>
 					<button
-						class="bg-blue-700 text-white font-medium px-6 py-3 rounded-md hover:bg-gray-800 transition-transform transform hover:scale-110 hover:rotate-2 animate-bounce"
+						class="bg-blue-700 text-white font-medium px-6 py-3 rounded-md hover:bg-gray-800"
 					>
 						Contact Us
 					</button>
@@ -580,7 +580,7 @@ const articles = [
 					<div
 						v-for="(article, index) in articles"
 						:key="index"
-						class="bg-[#3C2C17] rounded-lg overflow-hidden shadow-lg"
+						class="rounded-lg overflow-hidden shadow-lg"
 					>
 						<img
 							:src="article.image"
