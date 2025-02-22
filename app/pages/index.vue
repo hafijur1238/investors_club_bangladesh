@@ -73,6 +73,44 @@ const handleFileUpload = async (e: Event) => {
 		alert("An error occurred during the upload.");
 	}
 };
+const articles = [
+	{
+		image:
+			"https://images.unsplash.com/photo-1614028674026-a65e31bfd27c?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+		date: "Oct 22, 2024",
+		readTime: "12 min read",
+		title: "Releases and product updates",
+		description:
+			"It is a long established fact that a reader will be distracted by the readable content of a layout.",
+	},
+	{
+		image:
+			"https://images.unsplash.com/photo-1614028674026-a65e31bfd27c?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+		date: "Oct 22, 2024",
+		readTime: "12 min read",
+		title: "Releases and product updates",
+		description:
+			"It is a long established fact that a reader will be distracted by the readable content of a layout.",
+	},
+	{
+		image:
+			"https://images.unsplash.com/photo-1614028674026-a65e31bfd27c?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+		date: "Oct 22, 2024",
+		readTime: "12 min read",
+		title: "Releases and product updates",
+		description:
+			"It is a long established fact that a reader will be distracted by the readable content of a layout.",
+	},
+	{
+		image:
+			"https://images.unsplash.com/photo-1614028674026-a65e31bfd27c?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+		date: "Oct 22, 2024",
+		readTime: "12 min read",
+		title: "Releases and product updates",
+		description:
+			"It is a long established fact that a reader will be distracted by the readable content of a layout.",
+	},
+];
 </script>
 
 <template>
@@ -86,7 +124,7 @@ const handleFileUpload = async (e: Event) => {
 					class="text-center md:text-left md:max-w-lg animate-fade-in-up animate-delay-200 animate-duration-700"
 				>
 					<h1
-						class="text-5xl font-extrabold leading-normal mb-6 animate-slide-in-left animate-duration-1000"
+						class="text-6xl font-extrabold leading-normal mb-6 animate-slide-in-left animate-duration-1000"
 					>
 						A Better Way To <br />
 						Raise Capital
@@ -528,70 +566,57 @@ const handleFileUpload = async (e: Event) => {
 				</div>
 			</div>
 		</section>
+
+		<!-- Artical -->
+		<section class="bg-[#6E5C3B] py-12">
+			<div class="max-w-7xl mx-auto px-6">
+				<!-- Section Header -->
+				<h2 class="text-white text-2xl font-semibold mb-6">Latest articles</h2>
+
+				<!-- Articles Grid -->
+				<div
+					class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+				>
+					<div
+						v-for="(article, index) in articles"
+						:key="index"
+						class="bg-[#3C2C17] rounded-lg overflow-hidden shadow-lg"
+					>
+						<img
+							:src="article.image"
+							alt="Article Image"
+							class="w-full h-48 object-cover"
+						/>
+						<div class="p-4">
+							<p class="text-gray-300 text-sm">
+								{{ article.date }} -
+								<span class="text-yellow-400">{{ article.readTime }}</span>
+							</p>
+							<h3 class="text-white font-semibold text-lg mt-2">
+								{{ article.title }}
+							</h3>
+							<p class="text-gray-400 text-sm mt-1">
+								{{ article.description }}
+							</p>
+							<button
+								class="mt-4 w-full border border-gray-400 text-white py-2 rounded-md hover:bg-white hover:text-black transition duration-300"
+							>
+								Read more
+							</button>
+						</div>
+					</div>
+				</div>
+
+				<!-- Learn More Button -->
+				<div class="text-right mt-6">
+					<button
+						class="text-white text-lg font-medium flex items-center hover:underline"
+					>
+						Learn more
+						<span class="ml-2">›</span>
+					</button>
+				</div>
+			</div>
+		</section>
 	</main>
-
-	<div>
-		<h2>test..</h2>
-		<div>Playground</div>
-		<!-- <UploadButton
-			:config="{
-				endpoint: 'videoAndImage',
-				onClientUploadComplete(res) {
-					console.log(`onClientUploadComplete`, res);
-					alert('Upload Completed');
-
-					res[0]?.serverData;
-				},
-				onUploadBegin: () => {
-					console.log(`onUploadBegin`);
-				},
-			}"
-		/>
-
-		<UploadDropzone
-			:config="{
-				endpoint: 'e2',
-				onClientUploadComplete(res) {
-					console.log(`onClientUploadComplete`, res);
-					alert('Upload Completed');
-
-					res[0]?.serverData;
-				},
-				onUploadBegin: () => {
-					console.log(`onUploadBegin`);
-				},
-			}"
-		/> -->
-
-		<!-- <input
-			type="file"
-			@change="
-				async (e) => {
-					console.log(`e`, e);
-					const file = (e.target as HTMLInputElement).files?.[0];
-					if (!file) return;
-
-					// Do something with files
-
-					// Then start the upload
-					await startUpload([file]);
-				}
-			"
-		/> -->
-
-		<input type="file" @change="handleFileUpload" />
-	</div>
 </template>
-
-<!-- <script setup>
-const alert = (msg: string) => {
-	window.alert(msg);
-};
-
-const { startUpload } = useUploadThing("videoAndImage", {
-	onClientUploadComplete(res) {
-		console.log(`onClientUploadComplete`, res);
-		alert("Upload Completed");
-	},
-});
-</script> -->

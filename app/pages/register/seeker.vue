@@ -19,19 +19,19 @@
 		</div>
 
 		<!-- Registration Notice -->
-		<div class="bg-[#D1AC69] p-6 rounded-lg mb-6">
-			<h3 class="font-semibold text-gray-700">*Registration Notice</h3>
-			<p class="text-sm text-gray-600">
+		<div class="bg-[#AEA491] p-6 rounded-lg mb-6">
+			<h3 class="font-semibold text-white">*Registration Notice</h3>
+			<p class="text-sm text-white">
 				To complete your registration, please note that a payment of [amount] is
 				required. You can make this payment through any of the following
 				methods:
 			</p>
-			<ul class="list-disc text-sm text-gray-600 pl-4">
+			<ul class="list-disc text-sm text-white pl-4">
 				<li>Mobile Wallet: [Mobile Wallet Number]</li>
 				<li>Bank Transfer: [Bank Account Details]</li>
 				<li>Cash Payment: [Applicable for offline registration]</li>
 			</ul>
-			<p class="text-sm text-gray-600">
+			<p class="text-sm text-white">
 				Once the payment is made, kindly retain the receipt or transaction ID as
 				proof of payment. For any queries or assistance, feel free to contact us
 				at [Contact Information].
@@ -39,7 +39,7 @@
 		</div>
 
 		<!-- Form -->
-		<form class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+		<form class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-6">
 			<!-- Full Name & Email -->
 			<div>
 				<label class="block text-gray-700">Your Full Name</label>
@@ -109,7 +109,7 @@
 			</div>
 
 			<!-- Full Address -->
-			<div class="col-span-2">
+			<div class="col-span-1 sm:col-span-2">
 				<label class="block text-gray-700">Full Address</label>
 				<textarea
 					class="input-field"
@@ -148,18 +148,20 @@
 			</div>
 
 			<!-- Trade License -->
-			<div class="col-span-2">
+			<div class="col-span-1 sm:col-span-2">
 				<label class="block text-gray-700">Trade license (updated)</label>
 				<input type="file" class="file-input" />
 			</div>
 
-			<!-- Part 2: Additional Information Section -->
-			<div class="col-span-2 mt-8 bg-gray-100 p-6 rounded-lg text-center">
+			<!-- Additional Information Section -->
+			<div
+				class="col-span-1 sm:col-span-2 mt-8 bg-gray-100 p-6 rounded-lg text-center"
+			>
 				<h3 class="font-semibold text-gray-700 mb-3">Additional Information</h3>
 				<p class="text-sm text-gray-600">
 					The following information is optional at this stage but may help us
 					conduct due diligence more quickly. However, these details will be
-					required and must be provided during the verification process.
+					required during the verification process.
 				</p>
 			</div>
 
@@ -240,9 +242,9 @@
 			</div>
 
 			<!-- Submit Button -->
-			<div class="col-span-2 text-center mt-4">
+			<div class="col-span-1 sm:col-span-2 text-center mt-4">
 				<button
-					class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700"
+					class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 w-full sm:w-auto"
 				>
 					Submit
 				</button>

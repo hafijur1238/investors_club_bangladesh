@@ -19,19 +19,19 @@
 		</div>
 
 		<!-- Registration Notice -->
-		<div class="bg-[#D1AC69] p-6 rounded-lg mb-6">
-			<h3 class="font-semibold text-gray-700">*Registration Notice</h3>
-			<p class="text-sm text-gray-600">
+		<div class="bg-[#AEA491] p-6 rounded-lg mb-6">
+			<h3 class="font-semibold text-white">*Registration Notice</h3>
+			<p class="text-sm text-white">
 				To complete your registration, please note that a payment of [amount] is
 				required. You can make this payment through any of the following
 				methods:
 			</p>
-			<ul class="list-disc text-sm text-gray-600 pl-4">
+			<ul class="list-disc text-sm text-white pl-4">
 				<li>Mobile Wallet: [Mobile Wallet Number]</li>
 				<li>Bank Transfer: [Bank Account Details]</li>
 				<li>Cash Payment: [Applicable for offline registration]</li>
 			</ul>
-			<p class="text-sm text-gray-600">
+			<p class="text-sm text-white">
 				Once the payment is made, kindly retain the receipt or transaction ID as
 				proof of payment. For any queries or assistance, feel free to contact us
 				at [Contact Information].
