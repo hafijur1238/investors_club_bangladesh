@@ -11,8 +11,8 @@
 				</h1>
 				<p class="text-gray-500 mt-4 text-lg">March 15, 2025 · 8 min read</p>
 				<p class="text-gray-600 mt-6 text-lg leading-relaxed">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Odio
-					ullamcorper sed posuere consectetur viverra non iaculis porta.
+					Understanding the basics of investment is key to growing your wealth
+					over time. Here's a simplified breakdown of the key concepts:
 				</p>
 			</div>
 			<div>
@@ -96,8 +96,8 @@ const subscribe = () => {
 
 const posts = ref([
 	{
-		title: "Understanding the Basics of Investing",
-		slug: "understanding-the-basics-of-investing",
+		title: "What is Investment ?",
+		slug: "what-is-Investment",
 		date: "Oct 22, 2024",
 		readTime: "12 min read",
 		image:
@@ -106,8 +106,8 @@ const posts = ref([
 			"It is a long established fact that a reader will be distracted by the readable content of its layout.",
 	},
 	{
-		title: "Setting Up Your Investment Plan",
-		slug: "setting-up-your-investment-plan",
+		title: "What is Investment Crowdfunding?",
+		slug: "what-is-investment-crowdfunding",
 		date: "Oct 22, 2024",
 		readTime: "12 min read",
 		image:
@@ -116,8 +116,8 @@ const posts = ref([
 			"It is a long established fact that a reader will be distracted by the readable content of its layout.",
 	},
 	{
-		title: "First Steps to Making Your Investments",
-		slug: "first-steps-to-making-your-investments",
+		title: "How to invest in a halal way ?",
+		slug: "how-to-invest-in-a-halal-way",
 		date: "Oct 22, 2024",
 		readTime: "12 min read",
 		image:
@@ -126,8 +126,8 @@ const posts = ref([
 			"It is a long established fact that a reader will be distracted by the readable content of its layout.",
 	},
 	{
-		title: "Investing in Stocks: A Beginner's Guide",
-		slug: "investing-in-stocks-beginner-guide",
+		title: "How ICB Works what is ICB",
+		slug: "how-icb-works-what-is-icb",
 		date: "Oct 25, 2024",
 		readTime: "10 min read",
 		image:
@@ -136,8 +136,8 @@ const posts = ref([
 			"Understanding how to start investing in stocks with simple strategies and tips.",
 	},
 	{
-		title: "Cryptocurrency Investment Strategies",
-		slug: "cryptocurrency-investment-strategies",
+		title: "Work environment ICB",
+		slug: "work-environment-icb",
 		date: "Nov 01, 2024",
 		readTime: "15 min read",
 		image:
@@ -146,8 +146,8 @@ const posts = ref([
 			"Exploring different cryptocurrency investment strategies for long-term success.",
 	},
 	{
-		title: "How to Build a Diversified Portfolio",
-		slug: "how-to-build-a-diversified-portfolio",
+		title: "Know about ICB Project",
+		slug: "know-about-icb-project",
 		date: "Nov 05, 2024",
 		readTime: "14 min read",
 		image:
@@ -156,8 +156,8 @@ const posts = ref([
 			"Learn how to minimize risks by building a diversified investment portfolio.",
 	},
 	{
-		title: "Investing in Stocks: A Beginner's Guide",
-		slug: "investing-in-stocks-beginner-guide",
+		title: "ICB Franchise Model",
+		slug: "icb-franchise-model",
 		date: "Oct 25, 2024",
 		readTime: "10 min read",
 		image:
@@ -166,8 +166,8 @@ const posts = ref([
 			"Understanding how to start investing in stocks with simple strategies and tips.",
 	},
 	{
-		title: "Cryptocurrency Investment Strategies",
-		slug: "cryptocurrency-investment-strategies",
+		title: "Real Estate Investments",
+		slug: "real-estate-investments",
 		date: "Nov 01, 2024",
 		readTime: "15 min read",
 		image:
@@ -176,8 +176,8 @@ const posts = ref([
 			"Exploring different cryptocurrency investment strategies for long-term success.",
 	},
 	{
-		title: "How to Build a Diversified Portfolio",
-		slug: "how-to-build-a-diversified-portfolio",
+		title: "Business Buy and Selling",
+		slug: "business-buy-and-selling",
 		date: "Nov 05, 2024",
 		readTime: "14 min read",
 		image:
