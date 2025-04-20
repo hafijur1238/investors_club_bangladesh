@@ -197,7 +197,18 @@
 					class="text-gray-500 text-xs leading-relaxed text-center md:text-left"
 				>
 					<h3 class="font-semibold text-gray-800 mb-2">Disclaimer</h3>
-					<p>This is a placeholder disclaimer text.</p>
+					<p>
+						Investors Club Bangladesh is a community-driven platform designed to
+						promote financial literacy, investment education, and networking
+						among investors in Bangladesh. The content provided on this website
+						— including articles, market analysis, opinions, tools, and
+						resources — is for informational and educational purposes only.
+					</p>
+				</div>
+
+				<!-- Footer End -->
+				<div class="text-center text-sm text-gray-600 mt-6 mb-0">
+					<p>© 2025 NEXILY. All Rights Reserved.</p>
 				</div>
 			</div>
 		</div>

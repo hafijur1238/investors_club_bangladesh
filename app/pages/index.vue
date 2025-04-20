@@ -7,18 +7,25 @@ import _imports_3 from "@/assets/image_4.png";
 
 // services img
 
-import _imports_5 from "@/assets/Rectangle_1.png";
-import _imports_6 from "@/assets/Rectangle_2.png";
-import _imports_7 from "@/assets/Rectangle_3.png";
-import _imports_8 from "@/assets/Rectangle_4.png";
+import _imports_6 from "@/assets/new_com.png";
+import _imports_7 from "@/assets/new_div.png";
+import _imports_8 from "@/assets/new_equ.png";
+import _imports_5 from "@/assets/new_ver.png";
 
-import _imports_9 from "@/assets/image_p.png";
+import _imports_9 from "@/assets/new_trust1.jpeg";
 
-import _imports_10 from "@/assets/Rectangle_5.png";
-import _imports_11 from "@/assets/Rectangle_6.png";
-import _imports_12 from "@/assets/Rectangle_7.png";
+import _imports_10 from "@/assets/new_man1.png";
+import _imports_11 from "@/assets/new_man2.png";
+import _imports_12 from "@/assets/new_man3.png";
 
-import _imports_13 from "@/assets/Rectangle_8.png";
+import _imports_13 from "@/assets/new_fuel.png";
+
+import myHero from "@/assets/new_hero.png";
+
+import image1 from "@/assets/new_art1_min.png";
+import image2 from "@/assets/new_art2_min.png";
+import image3 from "@/assets/new_art3_min.png";
+import image4 from "@/assets/new_art4_min.png";
 
 const { data, error } = await useFetch<RecipeResponse>(
 	"https://dummyjson.com/recipes?limit=12"
@@ -73,44 +80,41 @@ const handleFileUpload = async (e: Event) => {
 		alert("An error occurred during the upload.");
 	}
 };
-const articles = [
+
+const articles = ref([
 	{
-		image:
-			"https://images.unsplash.com/photo-1614028674026-a65e31bfd27c?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+		image: image1,
 		date: "Oct 22, 2024",
 		readTime: "12 min read",
-		title: "Releases and product updates",
+		title: "How to invest in a halal way",
 		description:
 			"It is a long established fact that a reader will be distracted by the readable content of a layout.",
 	},
 	{
-		image:
-			"https://images.unsplash.com/photo-1614028674026-a65e31bfd27c?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+		image: image2,
 		date: "Oct 22, 2024",
 		readTime: "12 min read",
-		title: "Releases and product updates",
+		title: "How ICB Works/what is ICB",
 		description:
 			"It is a long established fact that a reader will be distracted by the readable content of a layout.",
 	},
 	{
-		image:
-			"https://images.unsplash.com/photo-1614028674026-a65e31bfd27c?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+		image: image3,
 		date: "Oct 22, 2024",
 		readTime: "12 min read",
-		title: "Releases and product updates",
+		title: "Work environment ICB",
 		description:
 			"It is a long established fact that a reader will be distracted by the readable content of a layout.",
 	},
 	{
-		image:
-			"https://images.unsplash.com/photo-1614028674026-a65e31bfd27c?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+		image: image4,
 		date: "Oct 22, 2024",
 		readTime: "12 min read",
-		title: "Releases and product updates",
+		title: "Business Buy and Selling",
 		description:
 			"It is a long established fact that a reader will be distracted by the readable content of a layout.",
 	},
-];
+]);
 </script>
 
 <template>
@@ -145,12 +149,10 @@ const articles = [
 				<div
 					class="mt-10 md:mt-0 md:ml-8 animate-fade-in animate-duration-1000 animate-delay-300 animate-zoom-in"
 				>
-					<NuxtImg
-						src="https://images.unsplash.com/photo-1640574232355-08659783b9fb?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-						alt="Hero Section Illustration"
-						class="w-[600px] h-auto rounded-lg"
-						format="jpg"
-						sizes="xs:100vw sm:667px"
+					<img
+						:src="myHero"
+						alt="Hero Section"
+						class="w-[600px] h-auto rounded-xl"
 					/>
 				</div>
 			</div>
@@ -293,11 +295,11 @@ const articles = [
 							class="rounded-lg w-full h-60 object-cover mb-4 animate-zoom-in animate-delay-[400ms]"
 						/>
 						<h4 class="text-lg font-semibold text-gray-800 mb-2">
-							Investor Management
+							Verified Listings
 						</h4>
 						<p class="text-gray-600 text-sm mb-4">
-							<strong>Investor relations reimagined.</strong> Leverage software
-							to drive meaningful, actionable engagement.
+							<strong>Trusted investment opportunities</strong> with fully
+							verified and authenticated listings.
 						</p>
 						<div class="flex items-center justify-end mt-auto"></div>
 					</div>
@@ -312,11 +314,11 @@ const articles = [
 							class="rounded-lg w-full h-60 object-cover mb-4 animate-zoom-in animate-delay-[600ms]"
 						/>
 						<h4 class="text-lg font-semibold text-gray-800 mb-2">
-							Financial Services
+							Community-Driven Trust
 						</h4>
 						<p class="text-gray-600 text-sm mb-4">
-							<strong>Consolidate your capital management.</strong> Leverage
-							seamless, flexible, and secure banking solutions.
+							<strong>Backed by community-driven trust,</strong> where real
+							investors validate every opportunity.
 						</p>
 						<div class="flex items-center justify-end mt-auto"></div>
 					</div>
@@ -331,11 +333,12 @@ const articles = [
 							class="rounded-lg w-full h-60 object-cover mb-4 animate-zoom-in animate-delay-[800ms]"
 						/>
 						<h4 class="text-lg font-semibold text-gray-800 mb-2">
-							Full Service Funds
+							Diverse Investment Paths
 						</h4>
 						<p class="text-gray-600 text-sm mb-4">
-							<strong>Investor relations reimagined.</strong> Leverage software
-							to drive meaningful, actionable engagement.
+							<strong>ICB offers diverse investment paths,</strong> empowering
+							you to choose opportunities that match your goals and risk
+							appetite.
 						</p>
 						<div class="flex items-center justify-end mt-auto"></div>
 					</div>
@@ -353,8 +356,7 @@ const articles = [
 							Equity Management
 						</h4>
 						<p class="text-gray-600 text-sm mb-4">
-							<strong>Investor relations reimagined.</strong> Leverage software
-							to drive meaningful, actionable engagement.
+							<strong>Equity management</strong> made simple and transparent.
 						</p>
 						<div class="flex items-center justify-end mt-auto"></div>
 					</div>
@@ -422,16 +424,15 @@ const articles = [
 					<img
 						:src="_imports_9"
 						alt="Investors working together"
-						class="rounded-lg shadow-lg max-w-full"
+						class="rounded-lg shadow-lg w-full h-auto max-w-md animate-fade-in animate-delay-[800ms]"
 					/>
 				</div>
 			</div>
 		</section>
 
 		<!-- Fund Section -->
-
 		<section
-			class="bg-[#0F172A] py-28 animate-fade-in animate-duration-[1000ms]"
+			class="bg-[#0F172A] py-16 lg:py-28 animate-fade-in animate-duration-[1000ms]"
 		>
 			<div class="max-w-7xl mx-auto px-6">
 				<!-- Content Wrapper -->
@@ -462,7 +463,9 @@ const articles = [
 					</div>
 
 					<!-- Image Section -->
-					<div class="flex gap-6 lg:gap-8">
+					<div
+						class="flex gap-6 lg:gap-8 justify-center lg:justify-end flex-wrap"
+					>
 						<!-- Image 1 -->
 						<div
 							class="rounded-full overflow-hidden w-24 h-24 lg:w-32 lg:h-60 animate-zoom-in animate-delay-[800ms]"
@@ -499,19 +502,20 @@ const articles = [
 		</section>
 
 		<!-- Fueling Section -->
-
-		<section class="bg-white py-32 animate-fade-in animate-duration-[1000ms]">
+		<section class="bg-white py-20 md:py-32 animate-fade-in duration-1000">
 			<div
-				class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-20 lg:gap-40 items-center"
+				class="max-w-7xl mx-auto px-4 md:px-6 grid lg:grid-cols-2 gap-16 lg:gap-24 items-center"
 			>
-				<!-- Left Text Section -->
-				<div class="animate-slide-in-left animate-delay-[300ms]">
-					<h2 class="text-5xl lg:text-7xl font-bold text-gray-900 mb-14">
+				<!-- Left Content -->
+				<div class="animate-slide-in-left delay-300">
+					<h2
+						class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-8 md:mb-12"
+					>
 						Fueling <br />
 						innovation
 					</h2>
 					<p
-						class="text-gray-600 text-base lg:text-lg mb-14 animate-fade-in animate-delay-[500ms]"
+						class="text-gray-600 text-base md:text-lg mb-8 md:mb-12 animate-fade-in delay-500"
 					>
 						ICB manages a large number of venture capital deals, leading the way
 						in digitalizing the process. This innovation makes investing faster,
@@ -520,49 +524,53 @@ const articles = [
 					<img
 						:src="_imports_13"
 						alt="Chart Display"
-						class="rounded-lg shadow-md animate-zoom-in animate-delay-[700ms]"
+						class="w-full rounded-lg shadow-md animate-zoom-in delay-700"
 					/>
 				</div>
 
-				<!-- Right Statistics Section -->
-				<div
-					class="space-y-8 mt-28 animate-slide-in-right animate-delay-[400ms]"
-				>
-					<!-- Top Statistic -->
-					<hr class="animate-scale-x animate-delay-[500ms]" />
-					<div
-						class="mb-40 flex flex-col items-center animate-fade-in-up animate-delay-[600ms]"
-					>
-						<hr />
-						<h3 class="text-5xl lg:text-[150px] font-bold text-gray-900">
-							$120B
-						</h3>
-						<p class="text-gray-600 text-base mt-2">assets on platform</p>
-					</div>
-					<hr class="animate-scale-x animate-delay-[700ms]" />
+				<!-- Right Stats -->
+				<div class="space-y-8 mt-16 md:mt-28 animate-slide-in-right delay-400">
+					<hr class="animate-scale-x delay-500" />
 
-					<!-- Other Stats Grid -->
-					<div class="grid grid-cols-2 gap-x-10 gap-y-16 justify-items-center">
-						<div class="animate-fade-in-up animate-delay-[800ms]">
-							<h4 class="text-2xl lg:text-5xl font-bold text-gray-900">24k+</h4>
+					<!-- Main Stat -->
+					<div
+						class="mb-16 flex flex-col items-center text-center animate-fade-in-up delay-600"
+					>
+						<h3
+							class="text-4xl md:text-6xl lg:text-8xl font-bold text-gray-900"
+						>
+							৳24 Cr
+						</h3>
+						<p class="text-gray-600 text-sm mt-2">assets on platform</p>
+					</div>
+
+					<hr class="animate-scale-x delay-700" />
+
+					<!-- Stats Grid -->
+					<div class="grid grid-cols-2 gap-x-8 gap-y-12 text-center">
+						<div class="animate-fade-in-up delay-800">
+							<h4 class="text-2xl md:text-4xl font-bold text-gray-900">728</h4>
 							<p class="text-gray-600 text-sm mt-1">funds</p>
 						</div>
-						<div class="animate-fade-in-up animate-delay-[900ms]">
-							<h4 class="text-2xl lg:text-5xl font-bold text-gray-900">12k+</h4>
+						<div class="animate-fade-in-up delay-900">
+							<h4 class="text-2xl md:text-4xl font-bold text-gray-900">122</h4>
 							<p class="text-gray-600 text-sm mt-1">investment seekers</p>
 						</div>
-						<div class="animate-fade-in-up animate-delay-[1000ms]">
-							<h4 class="text-2xl lg:text-5xl font-bold text-gray-900">85k+</h4>
+						<div class="animate-fade-in-up delay-1000">
+							<h4 class="text-2xl md:text-4xl font-bold text-gray-900">422</h4>
 							<p class="text-gray-600 text-sm mt-1">active investors</p>
 						</div>
-						<div class="animate-fade-in-up animate-delay-[1100ms]">
-							<h4 class="text-2xl lg:text-5xl font-bold text-gray-900">$8B</h4>
+						<div class="animate-fade-in-up delay-1100">
+							<h4 class="text-2xl md:text-4xl font-bold text-gray-900">
+								৳21.27 Cr
+							</h4>
 							<p class="text-gray-600 text-sm mt-1">
-								raised by investor seekers
+								raised by investment seekers
 							</p>
 						</div>
 					</div>
-					<hr class="animate-scale-x animate-delay-[1200ms]" />
+
+					<hr class="animate-scale-x delay-1200" />
 				</div>
 			</div>
 		</section>
