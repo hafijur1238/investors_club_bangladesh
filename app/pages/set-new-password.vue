@@ -36,26 +36,27 @@
 				<p v-if="errorMessage" class="text-red-500 text-sm mb-3">
 					{{ errorMessage }}
 				</p>
-
-				<button
-					type="submit"
-					class="w-full bg-blue-600 text-white py-3 rounded-lg text-lg hover:bg-blue-700 transition"
-				>
-					Submit
-				</button>
+				<p class="text-end text-gray-600 mt-4 mb-10">
+					Don’t have an account?
+					<nuxt-link to="/registration" class="text-blue-500 hover:underline"
+						>Register here</nuxt-link
+					>
+				</p>
+				<div class="flex justify-center item-center">
+					<button
+						type="submit"
+						class="bg-blue-600 text-white py-2 px-6 rounded-lg text-lg hover:bg-blue-700 transition"
+					>
+						Submit
+					</button>
+				</div>
 			</form>
-
-			<p class="text-center text-gray-600 mt-4">
-				Don’t have an account?
-				<nuxt-link to="/registration" class="text-blue-500 hover:underline"
-					>Register here</nuxt-link
-				>
-			</p>
 		</div>
 	</div>
 </template>
 
 <script setup>
+import { useAuth } from "@/composables/useAuth"; // import the useAuth composable
 import { ref } from "vue";
 import { useRouter } from "vue-router";
 
@@ -63,13 +64,23 @@ const router = useRouter();
 const newPassword = ref("");
 const confirmPassword = ref("");
 const errorMessage = ref("");
+const { isAuthenticated, isAdmin, getAuthHeader } = useAuth(); // using useAuth hook
 
 // Handle form submission
-const handleSubmit = () => {
+const handleSubmit = async () => {
+	// Check if the user is authenticated and is an admin
+	if (!isAuthenticated.value || !isAdmin.value) {
+		errorMessage.value =
+			"You must be logged in as an admin to perform this action.";
+		return;
+	}
+
+	// Validate the new password
 	if (newPassword.value.length < 8) {
 		errorMessage.value = "Password must be at least 8 characters long.";
 		return;
 	}
+
 	if (newPassword.value !== confirmPassword.value) {
 		errorMessage.value = "Passwords do not match.";
 		return;
@@ -78,7 +89,43 @@ const handleSubmit = () => {
 	// Reset error message
 	errorMessage.value = "";
 
-	// Redirect to dashboard after successful password update
-	router.push("/dashboard");
+	// Prepare the payload for the POST request
+	const payload = {
+		newPassword: newPassword.value,
+	};
+
+	try {
+		// Make the POST request to update the password
+		const response = await $fetch(
+			"http://103.174.50.71:8080/user/setPassword",
+			{
+				method: "POST",
+				headers: {
+					...getAuthHeader(), // include the authorization header from useAuth
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify(payload),
+			}
+		);
+
+		if (response.status === "OK") {
+			alert("Password updated successfully!");
+			// Redirect the user to the "/welcome-admin-agent" page
+			router.push("/welcome-admin-agent");
+		} else {
+			errorMessage.value = "Failed to update password. Please try again.";
+		}
+	} catch (error) {
+		console.error("Error:", error);
+		errorMessage.value = "An error occurred. Please try again.";
+	}
 };
 </script>
+
+<style scoped>
+/* Optional styles for customizations can go here */
+/* For example, input styling on validation error */
+/* input:invalid {
+        border-color: red;
+    } */
+</style>
